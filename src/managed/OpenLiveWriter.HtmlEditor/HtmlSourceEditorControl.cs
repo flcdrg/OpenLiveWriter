@@ -36,6 +36,35 @@ namespace OpenLiveWriter.HtmlEditor
             }
         }
 
+        public bool CanInsertAcronym
+        {
+            get
+            {
+                return CommandSource.CanApplyFormatting(null);
+            }
+        }
+        public void InsertAcronym()
+        {
+            using (new WaitCursor())
+            {
+                if (!_canInsertHyperlink)
+                {
+                    DisplayMessage.Show(MessageId.TitleNotLinkable);
+                    return;
+                }
+                using (var form = new HyperlinkForm(CommandManager, ShowAllLinkOptions))
+                {
+                    form.LinkText = _textBox.SelectedText;
+                    form.EditStyle = false;
+                    if (form.ShowDialog(Owner) == DialogResult.OK)
+                    {
+                        InsertLink(form.Hyperlink, form.LinkText, form.LinkTitle, form.Rel, form.NewWindow);
+                    }
+                }
+            }
+
+        }
+
         public HtmlSourceEditorControl(ISpellingChecker spellingChecker, CommandManager commandManager)
         {
             _commandManager = commandManager;
@@ -47,6 +76,7 @@ namespace OpenLiveWriter.HtmlEditor
             contextMenu.Entries.Add(CommandId.PasteSpecial, false, false);
             contextMenu.Entries.Add(CommandId.SelectAll, true, true);
             contextMenu.Entries.Add(CommandId.InsertLink, true, true);
+            contextMenu.Entries.Add(CommandId.InsertAcronym, true, true);
 
             // create and initialize the editor
             _textBox = new TextBoxEditorControl();

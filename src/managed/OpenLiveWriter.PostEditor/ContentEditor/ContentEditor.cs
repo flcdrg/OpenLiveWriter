@@ -248,6 +248,19 @@ namespace OpenLiveWriter.PostEditor
             }
         }
 
+        public bool CanInsertAcronym
+        {
+            get
+            {
+                return CurrentEditingMode != EditingMode.PlainText && !IsEditFieldSelected && _currentEditor != null && _currentEditor.CommandSource.CanInsertAcronym;
+            }
+        }
+
+        public void InsertAcronym()
+        {
+            _currentEditor.CommandSource.InsertAcronym();
+        }
+
         protected virtual string GetPreviewHtml()
         {
             return _editingTemplatePreview.Template;
@@ -633,6 +646,7 @@ namespace OpenLiveWriter.PostEditor
             CommandContextMenuDefinition insertMenuDefinition = new CommandContextMenuDefinition();
             insertMenuDefinition.CommandBar = true;
             insertMenuDefinition.Entries.Add(CommandId.InsertLink, false, false);
+            insertMenuDefinition.Entries.Add(CommandId.InsertAcronym, false, false);
             insertMenuDefinition.Entries.Add(CommandId.InsertPictureFromFile, false, false);
             insertMenuDefinition.Entries.Add(WebImageContentSource.ID, false, false);
             insertMenuDefinition.Entries.Add(CommandId.InsertTable2, true, true);

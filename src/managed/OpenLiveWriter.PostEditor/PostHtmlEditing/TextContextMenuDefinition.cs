@@ -26,6 +26,7 @@ namespace OpenLiveWriter.PostEditor.PostHtmlEditing
             {
                 Entries.Add(CommandId.SelectAll, true, true);
                 Entries.Add(CommandId.InsertLink, true, true);
+                Entries.Add(CommandId.InsertAcronym, true, true);
                 MenuDefinitionEntryPlaceholder alignPlaceholder = new MenuDefinitionEntryPlaceholder();
                 alignPlaceholder.MenuPath = Res.Get(StringId.AlignMenuItem);
                 Entries.Add(alignPlaceholder);

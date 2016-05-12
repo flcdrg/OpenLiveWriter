@@ -5476,6 +5476,15 @@ namespace OpenLiveWriter.HtmlEditor
             }
         }
 
+        public bool CanInsertAcronym { get { return Editable; } }
+
+        public void InsertAcronym()
+        {
+            using (new WaitCursor())
+            {
+            }
+        }
+
         public bool CanClear
         {
             get

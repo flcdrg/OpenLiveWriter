@@ -603,6 +603,7 @@ namespace OpenLiveWriter.PostEditor
             InitializeCommand(new SuperscriptCommand());
             InitializeCommand(new SubscriptCommand());
             InitializeCommand(new ClearFormattingCommand());
+            InitializeCommand(new InsertAcronymCommand());
 
             commandFontSize = new FontSizeCommand();
             CommandManager.Add(commandFontSize);
@@ -1430,6 +1431,20 @@ namespace OpenLiveWriter.PostEditor
             public override void Manage()
             {
                 Enabled = PostEditor.CanInsertLink;
+            }
+        }
+
+        private class InsertAcronymCommand : TextEditingCommand
+        {
+            public override CommandId CommandId { get { return CommandId.InsertAcronym; } }
+            public override void Manage()
+            {
+                Enabled = PostEditor.CanInsertAcronym;
+            }
+
+            protected override void Execute()
+            {
+                PostEditor.InsertAcronym();
             }
         }
 

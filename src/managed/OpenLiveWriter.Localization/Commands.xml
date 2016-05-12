@@ -126,6 +126,11 @@
     MenuText="&amp;Hyperlink..."
     Text="Insert hyperlink" />
   <Command
+    Identifier="InsertAcronym"
+    Shortcut="CtrlShiftA"
+    MenuText="&amp;Acronym..."
+    Text="Insert acronym" />
+  <Command
     Identifier="Italic"
     Shortcut="CtrlI"
     Text="Italic" />
@@ -330,18 +335,18 @@
     MenuText="&amp;Source"
     SuppressMenuBitmap="True"
     Text="Source"
-	comment:Text="Displayed in the view switching tabs at the bottom of the editor." />
+    comment:Text="Displayed in the view switching tabs at the bottom of the editor." />
   <Command
-	  Identifier="ViewPlainText"
-	  SuppressMenuBitmap="True"
-	  MenuText="Plain Text Mode" />
+      Identifier="ViewPlainText"
+      SuppressMenuBitmap="True"
+      MenuText="Plain Text Mode" />
   <Command
     Identifier="ViewNormal"
     Shortcut="F11"
     MenuText="&amp;Edit"
     SuppressMenuBitmap="True"
     Text="Edit"
-	comment:Text="Displayed in the view switching tabs at the bottom of the editor." />
+    comment:Text="Displayed in the view switching tabs at the bottom of the editor." />
   <Command
     Identifier="ViewSidebar"
     Shortcut="F9"
@@ -355,7 +360,7 @@
     Shortcut="F12"
     MenuText="&amp;Preview"
     Text="Preview"
-	comment:Text="Displayed in the view switching tabs at the bottom of the editor." />
+    comment:Text="Displayed in the view switching tabs at the bottom of the editor." />
   <Command
     Identifier="CellProperties"
     MenuText="Cell pr&amp;operties..."
@@ -530,12 +535,12 @@
     MenuText="[Debug] Show &amp;Supporting Files" />
   <Command
     DebugOnly="true"
-	  Identifier="ShowBetaExpiredDialogs"
-	  MenuText="[Debug] Show Expired Dialogs" />
+      Identifier="ShowBetaExpiredDialogs"
+      MenuText="[Debug] Show Expired Dialogs" />
   <Command
     DebugOnly="true"
-	  Identifier="ShowWebLayoutWarning"
-	  MenuText="[Debug] Show Web Layout Warning" />
+      Identifier="ShowWebLayoutWarning"
+      MenuText="[Debug] Show Web Layout Warning" />
   <Command
     DebugOnly="true"
     Identifier="InsertLoremIpsum"

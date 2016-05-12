@@ -2093,6 +2093,26 @@ namespace OpenLiveWriter.Localization {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap InsertAcronym_LargeImage {
+            get {
+                object obj = ResourceManager.GetObject("InsertAcronym_LargeImage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap InsertAcronym_SmallImage {
+            get {
+                object obj = ResourceManager.GetObject("InsertAcronym_SmallImage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap InsertClearBreak_LargeImage {
             get {
                 object obj = ResourceManager.GetObject("InsertClearBreak_LargeImage", resourceCulture);

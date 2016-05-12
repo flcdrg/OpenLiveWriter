@@ -347,6 +347,8 @@
     <Command Name="cmdWeblogMenu" Symbol="WeblogMenu" Id="23486" Comment=""/>
     <Command Name="cmdWeblogPicker" Symbol="WeblogPicker" Id="23487" Comment=""/>
     <Command Name="cmdApplySemanticParagraph" Symbol="ApplySemanticParagraph" Id="23488" Comment=""/>
+
+    <Command Name="cmdInsertAcronym" Keytip="M" LabelTitle="Acronym" TooltipTitle="Acronym (Ctrl+M)" TooltipDescription="Create an acronym" Symbol="InsertAcronym" Id="23489" Comment="InsertTab-MediaGroup-InsertAcronym"/>
     
     <!-- DEBUG COMMANDS -->
     <Command Name="cmdGeneralDebugGroup" LabelTitle="General" TooltipTitle="General debugging" Symbol="cmdGeneralDebugGroup" Id="50400" Comment="DebugTab-GeneralDebugGroup"/>

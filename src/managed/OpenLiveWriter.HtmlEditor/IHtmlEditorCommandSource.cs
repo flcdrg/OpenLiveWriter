@@ -99,6 +99,8 @@ namespace OpenLiveWriter.HtmlEditor
         bool FullyEditableRegionActive { get; }
 
         CommandManager CommandManager { get; }
+        bool CanInsertAcronym { get; }
+        void InsertAcronym();
     }
 
     public class LinkInfo

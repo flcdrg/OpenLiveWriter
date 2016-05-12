@@ -70,7 +70,8 @@ namespace OpenLiveWriter.HtmlEditor.Controls
                                                                                              new HtmlElementFormattingStyle(Res.Get(StringId.Heading4), "h4", _ELEMENT_TAG_ID.TAGID_H4),
                                                                                              new HtmlElementFormattingStyle(Res.Get(StringId.Heading5), "h5", _ELEMENT_TAG_ID.TAGID_H5),
                                                                                              new HtmlElementFormattingStyle(Res.Get(StringId.Heading6), "h6", _ELEMENT_TAG_ID.TAGID_H6),
-                                                                                             new HtmlElementFormattingStyle(Res.Get(StringId.Paragraph), "p", _ELEMENT_TAG_ID.TAGID_P)
+                                                                                             new HtmlElementFormattingStyle(Res.Get(StringId.Paragraph), "p", _ELEMENT_TAG_ID.TAGID_P),
+                                                                                             new HtmlElementFormattingStyle("Pre", "pre", _ELEMENT_TAG_ID.TAGID_PRE), 
                                                                                          };
 
         /// <summary>
@@ -97,29 +98,29 @@ namespace OpenLiveWriter.HtmlEditor.Controls
         {
             this.components = new System.ComponentModel.Container();
             this.styleComboBox = new System.Windows.Forms.ComboBox();
-            this.toolTip = new ToolTip2(this.components);
+            this.toolTip = new OpenLiveWriter.Controls.ToolTip2(this.components);
             this.SuspendLayout();
-            //
+            // 
             // styleComboBox
-            //
-            this.styleComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                | System.Windows.Forms.AnchorStyles.Left)
-                | System.Windows.Forms.AnchorStyles.Right)));
+            // 
+            this.styleComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.styleComboBox.DisplayMember = "Change Text Style";
             this.styleComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.styleComboBox.Location = new System.Drawing.Point(0, 0);
             this.styleComboBox.MaxDropDownItems = 15;
             this.styleComboBox.Name = "styleComboBox";
-            this.styleComboBox.Size = new System.Drawing.Size(76, 21);
+            this.styleComboBox.Size = new System.Drawing.Size(570, 39);
             this.styleComboBox.TabIndex = 0;
             this.toolTip.SetToolTip(this.styleComboBox, "Change Text Style");
             this.styleComboBox.SelectionChangeCommitted += new System.EventHandler(this.styleComboBox_SelectionChangeCommitted);
-            //
+            // 
             // HtmlStylePicker
-            //
+            // 
             this.Controls.Add(this.styleComboBox);
             this.Name = "HtmlStylePicker";
-            this.Size = new System.Drawing.Size(76, 21);
+            this.Size = new System.Drawing.Size(570, 236);
             this.ResumeLayout(false);
 
         }
