@@ -14,6 +14,7 @@ using System.Runtime.InteropServices.ComTypes;
 using System.Threading;
 using System.Web;
 using System.Windows.Forms;
+using System.Windows.Interop;
 using OpenLiveWriter.ApplicationFramework;
 using OpenLiveWriter.Controls;
 using OpenLiveWriter.CoreServices;
@@ -30,7 +31,9 @@ using OpenLiveWriter.Localization;
 using OpenLiveWriter.Mshtml;
 using OpenLiveWriter.Mshtml.Mshtml_Interop;
 using OpenLiveWriter.SpellChecker;
+using Application = System.Windows.Application;
 using IDataObject = System.Windows.Forms.IDataObject;
+using IWin32Window = System.Windows.Forms.IWin32Window;
 
 namespace OpenLiveWriter.HtmlEditor
 {
@@ -1723,6 +1726,55 @@ namespace OpenLiveWriter.HtmlEditor
                 }
             }
             return false;
+        }
+
+        private IHTMLElement GetCurrentEditableAcronymElement()
+        {
+            IHTMLElement acronym = null;
+            if (!_mshtmlEditor.MshtmlControl.DocumentIsComplete)
+                return acronym;
+            MarkupRange markupRange = SelectedMarkupRange;
+            if (markupRange != null)
+            {
+                //correct range as necessary
+                MarkupRange editableBoundary = PrimaryEditableBounds;
+                MarkupRange range = markupRange.Clone();
+                MarkupPointerMoveHelper.MoveUnitBounded(range.Start,
+                    MarkupPointerMoveHelper.MoveDirection.LEFT,
+                    MarkupPointerAdjacency.BeforeVisible | MarkupPointerAdjacency.BeforeEnterScope,
+                    editableBoundary.Start);
+
+                // determine if this is an edit of an existing link
+                if (HasContiguousSelection)
+                {
+                    //try to locate the anchor within the selection.
+                    IHTMLElement[] anchors = range.GetElements(ElementFilters.ACRONYM_ELEMENTS, false);
+                    if (anchors.Length > 0)
+                    {
+                        acronym = anchors[0];
+                    }
+                }
+
+                if (acronym == null)
+                {
+                    //walk up the parent node incase the selection is entirely within an anchor
+                    IHTMLElement parent = range.Start.CurrentScope;
+                    while (parent != null && !(parent is IHTMLElement))
+                    {
+                        parent = parent.parentElement;
+                    }
+                    acronym = parent;
+
+                    //verify the anchor is within the editable boundary
+                    if (acronym != null)
+                    {
+                        range.MoveToElement(acronym, true);
+                        if (!editableBoundary.InRange(range))
+                            acronym = null;
+                    }
+                }
+            }
+            return acronym;
         }
 
         /// <summary>
@@ -5482,6 +5534,53 @@ namespace OpenLiveWriter.HtmlEditor
         {
             using (new WaitCursor())
             {
+                var model = new AcronymFormViewModel();
+                var form = new AcronymForm(model);
+                WindowInteropHelper helper = new WindowInteropHelper(form);
+                var forms = System.Windows.Forms.Application.OpenForms;
+                helper.Owner = forms[0].Handle;
+                form.ShowDialog();
+                if (form.DialogResult.HasValue && form.DialogResult.Value)
+                {
+                    var definition = model.Definition;
+                    var acronym = model.Acronym;
+
+                    MarkupRange range = CleanUpRange();
+                    string html = $"<acronym title=\'{definition}\'>{acronym}</acronym>"; //HtmlGenerationService.GenerateHtmlFromLink(url, linkText, title, rel, newWindow);
+                    if (range == null)
+                    {
+                        range = SelectedMarkupRange;
+                    }
+                    IHTMLTxtRange txtRange = range.ToTextRange();
+                    if (txtRange.text != null)
+                    {
+                        int length = txtRange.text.TrimEnd(null).Length;
+                        txtRange.moveEnd("CHARACTER", length - txtRange.text.Length);
+                        if (txtRange.text != null)
+                        {
+                            length = txtRange.text.Length;
+                            int startLength = txtRange.text.TrimStart(null).Length;
+                            txtRange.moveStart("CHARACTER", length - startLength);
+                        }
+                        range.MoveToTextRange(txtRange);
+                    }
+
+                    //put the cursor at the end of the link, but outside of it
+                    range.Start.PushGravity(_POINTER_GRAVITY.POINTER_GRAVITY_Left);
+                    range.End.PushGravity(_POINTER_GRAVITY.POINTER_GRAVITY_Right);
+
+                    try
+                    {
+                        InsertHtml(range.Start, range.End, html);
+                        range.Start.MoveToPointer(range.End);
+                        range.ToTextRange().select();
+                    }
+                    finally
+                    {
+                        range.Start.PopGravity();
+                        range.End.PopGravity();
+                    }
+                }
             }
         }
 

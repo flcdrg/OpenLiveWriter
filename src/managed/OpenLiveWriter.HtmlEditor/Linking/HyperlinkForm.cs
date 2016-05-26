@@ -450,145 +450,151 @@ namespace OpenLiveWriter.HtmlEditor.Linking
             this.btnOptions = new OpenLiveWriter.HtmlEditor.Linking.LinkOptionsButton();
             this.btnAdvanced = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
-            this.btnOptionsToolTip = new ToolTip2(components);
+            this.btnOptionsToolTip = new OpenLiveWriter.Controls.ToolTip2(this.components);
             this.ckBoxGlossary = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
-            //
+            // 
             // buttonInsert
-            //
+            // 
             this.buttonInsert.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonInsert.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonInsert.Location = new System.Drawing.Point(370, 10);
+            this.buttonInsert.Location = new System.Drawing.Point(628, 10);
             this.buttonInsert.Name = "buttonInsert";
             this.buttonInsert.Size = new System.Drawing.Size(75, 23);
             this.buttonInsert.TabIndex = 12;
             this.buttonInsert.Text = "OK";
             this.buttonInsert.Click += new System.EventHandler(this.buttonOk_Click);
-            //
+            // 
             // buttonCancel
-            //
+            // 
             this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonCancel.Location = new System.Drawing.Point(370, 39);
+            this.buttonCancel.Location = new System.Drawing.Point(628, 39);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 13;
             this.buttonCancel.Text = "Cancel";
-            //
+            // 
             // bevel
-            //
-            this.bevel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            // 
+            this.bevel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.bevel.Location = new System.Drawing.Point(6, 191);
             this.bevel.MultiLine = false;
             this.bevel.Name = "bevel";
-            this.bevel.Size = new System.Drawing.Size(435, 4);
+            this.bevel.Size = new System.Drawing.Size(693, 4);
             this.bevel.TabIndex = 0;
-            //
+            // 
             // label1
-            //
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label1.Location = new System.Drawing.Point(10, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(312, 15);
+            this.label1.Size = new System.Drawing.Size(570, 15);
             this.label1.TabIndex = 1;
             this.label1.Text = "&URL:";
-            //
+            // 
             // textBoxAddress
-            //
-            this.textBoxAddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            // 
+            this.textBoxAddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxAddress.Location = new System.Drawing.Point(10, 28);
             this.textBoxAddress.Name = "textBoxAddress";
-            this.textBoxAddress.Size = new System.Drawing.Size(258, 21);
+            this.textBoxAddress.Size = new System.Drawing.Size(516, 47);
             this.textBoxAddress.TabIndex = 2;
             this.textBoxAddress.TextChanged += new System.EventHandler(this.textBoxAddress_TextChanged);
-            //
+            // 
             // labelLinkText
-            //
-            this.labelLinkText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            // 
+            this.labelLinkText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelLinkText.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.labelLinkText.Location = new System.Drawing.Point(10, 57);
             this.labelLinkText.Name = "labelLinkText";
-            this.labelLinkText.Size = new System.Drawing.Size(312, 15);
+            this.labelLinkText.Size = new System.Drawing.Size(570, 15);
             this.labelLinkText.TabIndex = 4;
             this.labelLinkText.Text = "Te&xt:";
-            //
+            // 
             // textBoxLinkText
-            //
-            this.textBoxLinkText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            // 
+            this.textBoxLinkText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxLinkText.Location = new System.Drawing.Point(10, 73);
             this.textBoxLinkText.Name = "textBoxLinkText";
-            this.textBoxLinkText.Size = new System.Drawing.Size(351, 21);
+            this.textBoxLinkText.Size = new System.Drawing.Size(609, 47);
             this.textBoxLinkText.TabIndex = 5;
             this.textBoxLinkText.TextChanged += new System.EventHandler(this.textBoxLinkText_TextChanged);
-            //
+            // 
             // labelTitle
-            //
-            this.labelTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            // 
+            this.labelTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelTitle.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.labelTitle.Location = new System.Drawing.Point(10, 207);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(341, 15);
+            this.labelTitle.Size = new System.Drawing.Size(599, 15);
             this.labelTitle.TabIndex = 8;
             this.labelTitle.Text = "&Title:";
-            //
+            // 
             // textBoxTitle
-            //
-            this.textBoxTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            // 
+            this.textBoxTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxTitle.Location = new System.Drawing.Point(10, 223);
             this.textBoxTitle.Name = "textBoxTitle";
-            this.textBoxTitle.Size = new System.Drawing.Size(351, 21);
+            this.textBoxTitle.Size = new System.Drawing.Size(609, 47);
             this.textBoxTitle.TabIndex = 9;
             this.textBoxTitle.TextChanged += new System.EventHandler(this.textBoxTitle_TextChanged);
-            //
+            // 
             // labelRel
-            //
-            this.labelRel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            // 
+            this.labelRel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelRel.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.labelRel.Location = new System.Drawing.Point(10, 252);
             this.labelRel.Name = "labelRel";
-            this.labelRel.Size = new System.Drawing.Size(341, 15);
+            this.labelRel.Size = new System.Drawing.Size(599, 15);
             this.labelRel.TabIndex = 10;
             this.labelRel.Text = "R&el:";
-            //
+            // 
             // comboBoxRel
-            //
-            this.comboBoxRel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            // 
+            this.comboBoxRel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxRel.Items.AddRange(new object[] {
+            "",
+            "tag",
+            "enclosure",
+            "license",
+            "nofollow"});
             this.comboBoxRel.Location = new System.Drawing.Point(10, 268);
             this.comboBoxRel.Name = "comboBoxRel";
             this.comboBoxRel.Rel = "";
-            this.comboBoxRel.Size = new System.Drawing.Size(351, 21);
+            this.comboBoxRel.Size = new System.Drawing.Size(609, 49);
             this.comboBoxRel.TabIndex = 11;
-            //
+            // 
             // ckboxNewWindow
-            //
-            this.ckboxNewWindow.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            // 
+            this.ckboxNewWindow.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ckboxNewWindow.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ckboxNewWindow.Location = new System.Drawing.Point(10, 105);
             this.ckboxNewWindow.Name = "ckboxNewWindow";
-            this.ckboxNewWindow.Size = new System.Drawing.Size(430, 22);
+            this.ckboxNewWindow.Size = new System.Drawing.Size(688, 22);
             this.ckboxNewWindow.TabIndex = 6;
             this.ckboxNewWindow.Text = "&Open link in new window";
-            //
+            // 
             // btnOptions
-            //
+            // 
             this.btnOptions.AccessibleName = "&Link to";
             this.btnOptions.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonMenu;
             this.btnOptions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnOptions.Image")));
             this.btnOptions.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnOptions.Location = new System.Drawing.Point(273, 27);
+            this.btnOptions.Location = new System.Drawing.Point(531, 27);
             this.btnOptions.Name = "btnOptions";
             this.btnOptions.Size = new System.Drawing.Size(87, 23);
             this.btnOptions.TabIndex = 3;
@@ -596,45 +602,45 @@ namespace OpenLiveWriter.HtmlEditor.Linking
             this.btnOptions.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnOptionsToolTip.SetToolTip(this.btnOptions, "Browse for link");
             this.btnOptions.Click += new System.EventHandler(this.btnOptions_Click);
-            //
+            // 
             // btnAdvanced
-            //
+            // 
             this.btnAdvanced.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAdvanced.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnAdvanced.Location = new System.Drawing.Point(331, 159);
+            this.btnAdvanced.Location = new System.Drawing.Point(589, 159);
             this.btnAdvanced.Name = "btnAdvanced";
             this.btnAdvanced.Size = new System.Drawing.Size(114, 23);
             this.btnAdvanced.TabIndex = 15;
             this.btnAdvanced.Text = "&Advanced »";
             this.btnAdvanced.Click += new System.EventHandler(this.btnAdvanced_Click);
-            //
+            // 
             // btnRemove
-            //
+            // 
             this.btnRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRemove.DialogResult = System.Windows.Forms.DialogResult.No;
             this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnRemove.Location = new System.Drawing.Point(210, 159);
+            this.btnRemove.Location = new System.Drawing.Point(468, 159);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(114, 23);
             this.btnRemove.TabIndex = 14;
             this.btnRemove.Text = "&Remove Link";
-            //
+            // 
             // ckBoxGlossary
-            //
-            this.ckBoxGlossary.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            // 
+            this.ckBoxGlossary.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ckBoxGlossary.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ckBoxGlossary.Location = new System.Drawing.Point(10, 129);
             this.ckBoxGlossary.Name = "ckBoxGlossary";
-            this.ckBoxGlossary.Size = new System.Drawing.Size(430, 22);
+            this.ckBoxGlossary.Size = new System.Drawing.Size(688, 22);
             this.ckBoxGlossary.TabIndex = 7;
             this.ckBoxGlossary.Text = " ";
-            //
+            // 
             // HyperlinkForm
-            //
+            // 
             this.AcceptButton = this.buttonInsert;
             this.CancelButton = this.buttonCancel;
-            this.ClientSize = new System.Drawing.Size(452, 300);
+            this.ClientSize = new System.Drawing.Size(710, 462);
             this.Controls.Add(this.ckBoxGlossary);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnAdvanced);
@@ -651,6 +657,7 @@ namespace OpenLiveWriter.HtmlEditor.Linking
             this.Controls.Add(this.comboBoxRel);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonInsert);
+            this.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "HyperlinkForm";

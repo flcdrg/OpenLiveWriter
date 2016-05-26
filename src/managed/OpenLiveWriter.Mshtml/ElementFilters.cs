@@ -311,6 +311,13 @@ namespace OpenLiveWriter.Mshtml
         }
         public static IHTMLElementFilter INLINE_ELEMENTS = new IHTMLElementFilter(IsInlineElement);
 
+        public static bool IsAcronymElement(IHTMLElement e)
+        {
+            return e.tagName.ToUpperInvariant().Equals("ACRONYM");
+        }
+
+        public static IHTMLElementFilter ACRONYM_ELEMENTS = IsAcronymElement;
+
         public static bool IsAnchorElement(IHTMLElement e)
         {
             return e.tagName.Equals("A");

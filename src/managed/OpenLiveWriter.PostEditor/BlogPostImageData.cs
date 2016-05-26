@@ -96,6 +96,7 @@ namespace OpenLiveWriter.PostEditor
                 ImageFormat format;
                 string fileExt;
                 ImageHelper2.GetImageFormat(sourceFile.SupportingFile.FileName, out fileExt, out format);
+                
                 using (Bitmap sourceImage = new Bitmap(sourceFile.Uri.LocalPath))
                 {
                     if (sourceImage.Width > shadowSize.Width || sourceImage.Height > shadowSize.Height)

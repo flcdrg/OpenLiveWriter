@@ -47,22 +47,8 @@ namespace OpenLiveWriter.HtmlEditor
         {
             using (new WaitCursor())
             {
-                if (!_canInsertHyperlink)
-                {
-                    DisplayMessage.Show(MessageId.TitleNotLinkable);
-                    return;
-                }
-                using (var form = new HyperlinkForm(CommandManager, ShowAllLinkOptions))
-                {
-                    form.LinkText = _textBox.SelectedText;
-                    form.EditStyle = false;
-                    if (form.ShowDialog(Owner) == DialogResult.OK)
-                    {
-                        InsertLink(form.Hyperlink, form.LinkText, form.LinkTitle, form.Rel, form.NewWindow);
-                    }
-                }
-            }
 
+            }
         }
 
         public HtmlSourceEditorControl(ISpellingChecker spellingChecker, CommandManager commandManager)
